@@ -1,40 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 using UnityEngine;
 
 namespace NewGamePlus
 {
     public class ConfigDirectories
     {
-        public string ModAssemblyName { get; private set; }
-
-        /// <summary>
-        /// The full path to the config file.  Stored in the mod's persistence folder.
-        /// </summary>
-        public string ConfigPath { get; private set; }
-
-        /// <summary>
-        /// This mod's persistence folder.
-        /// </summary>
-        public string ModPersistenceFolder { get; private set; }
-
-        /// <summary>
-        /// The Quasimorph_Mods folder that is parallel to the game's folder.
-        /// This is a workaround for Quasimorph syncing and overwriting all files in the 
-        /// Game's App Data folder.
-        /// </summary>
-        public string AllModsConfigFolder { get; set; }
-
-        /// <summary>
-        /// The name of the config file name.  Defaults to config.json
-        /// </summary>
-        public string ConfigFileName { get; set; }
-
         public ConfigDirectories(string configFileName = "config.json")
         {
             ModAssemblyName = Assembly.GetExecutingAssembly().GetName().Name;
@@ -42,17 +14,40 @@ namespace NewGamePlus
             ModPersistenceFolder = Path.Combine(AllModsConfigFolder, ModAssemblyName);
             ConfigPath = Path.Combine(ModPersistenceFolder, configFileName);
             ConfigFileName = configFileName;
-
         }
 
+        public string ModAssemblyName { get; }
+
         /// <summary>
-        /// Moves the config files from the legacy directory to the new directory.
+        ///     The full path to the config file.  Stored in the mod's persistence folder.
+        /// </summary>
+        public string ConfigPath { get; }
+
+        /// <summary>
+        ///     This mod's persistence folder.
+        /// </summary>
+        public string ModPersistenceFolder { get; }
+
+        /// <summary>
+        ///     The Quasimorph_Mods folder that is parallel to the game's folder.
+        ///     This is a workaround for Quasimorph syncing and overwriting all files in the
+        ///     Game's App Data folder.
+        /// </summary>
+        public string AllModsConfigFolder { get; set; }
+
+        /// <summary>
+        ///     The name of the config file name.  Defaults to config.json
+        /// </summary>
+        public string ConfigFileName { get; set; }
+
+        /// <summary>
+        ///     Moves the config files from the legacy directory to the new directory.
         /// </summary>
         public void UpgradeModDirectory()
         {
             try
             {
-                string oldDirectory = Path.Combine(Application.persistentDataPath,
+                var oldDirectory = Path.Combine(Application.persistentDataPath,
                     ModAssemblyName);
 
                 if (!Directory.Exists(oldDirectory)) return;
@@ -62,19 +57,19 @@ namespace NewGamePlus
             }
             catch (Exception ex)
             {
-                Plugin.Logger.Log($"Unable to move the config files.  Exception: {ex.ToString()}");
+                Plugin.Logger.Log($"Unable to move the config files.  Exception: {ex}");
             }
         }
 
         /// <summary>
-        /// Moves a standalone file to a directory config path.
+        ///     Moves a standalone file to a directory config path.
         /// </summary>
         /// <param name="configFileName"></param>
         public void UpgradeFile(string configFileName = "config.json")
         {
             try
             {
-                string oldConfigFile = Path.Combine(Application.persistentDataPath, configFileName);
+                var oldConfigFile = Path.Combine(Application.persistentDataPath, configFileName);
 
                 if (!File.Exists(oldConfigFile)) return;
 
@@ -84,7 +79,7 @@ namespace NewGamePlus
             }
             catch (Exception ex)
             {
-                Plugin.Logger.Log($"Unable to move the config files.  Exception: {ex.ToString()}");
+                Plugin.Logger.Log($"Unable to move the config files.  Exception: {ex}");
             }
         }
     }

@@ -1,37 +1,37 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MGSC;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using UnityEngine;
 
 namespace NewGamePlus
 {
+    public class BackpackConfig
+    {
+        public float Weight = 15f;
+    }
+
     public class ModConfig
     {
+        private static readonly JsonSerializerSettings SerializerSettings = new JsonSerializerSettings
+        {
+            Formatting = Formatting.Indented
+        };
+
+        public Dictionary<string, BackpackConfig> Backpacks { get; set; } = new Dictionary<string, BackpackConfig>();
+
         public static ModConfig LoadConfig(string configPath)
         {
             ModConfig config;
 
-            JsonSerializerSettings serializerSettings = new JsonSerializerSettings()
-            {
-                Formatting = Formatting.Indented,
-            };
-
             if (File.Exists(configPath))
-            {
                 try
                 {
-                    string sourceJson = File.ReadAllText(configPath);
+                    var sourceJson = File.ReadAllText(configPath);
 
-                    config = JsonConvert.DeserializeObject<ModConfig>(sourceJson, serializerSettings);
+                    config = JsonConvert.DeserializeObject<ModConfig>(sourceJson, SerializerSettings);
 
                     //Add any new elements that have been added since the last mod version the user had.
-                    string upgradeConfig = JsonConvert.SerializeObject(config, serializerSettings);
+                    var upgradeConfig = JsonConvert.SerializeObject(config, SerializerSettings);
 
                     if (upgradeConfig != sourceJson)
                     {
@@ -52,18 +52,19 @@ namespace NewGamePlus
                     config = new ModConfig();
                     return config;
                 }
-            }
-            else
-            {
-                config = new ModConfig();
-                
-                string json = JsonConvert.SerializeObject(config, serializerSettings);
-                File.WriteAllText(configPath, json);
 
-                return config;
-            }
+            config = new ModConfig();
 
+            var json = JsonConvert.SerializeObject(config, SerializerSettings);
+            File.WriteAllText(configPath, json);
 
+            return config;
+        }
+
+        public void Save(string configPath)
+        {
+            var json = JsonConvert.SerializeObject(this, SerializerSettings);
+            File.WriteAllText(configPath, json);
         }
     }
 }

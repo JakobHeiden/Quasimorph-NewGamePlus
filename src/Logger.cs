@@ -1,36 +1,28 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 using UnityEngine;
 
 namespace NewGamePlus
 {
     /// <summary>
-    /// A Unity Debug Logger that includes the assembly name.
-    /// Makes finding the mod that created the log entry easy to find.
-    /// Calls the Unity.Debug functions that match the function names.
+    ///     A Unity Debug Logger that includes the assembly name.
+    ///     Makes finding the mod that created the log entry easy to find.
+    ///     Calls the Unity.Debug functions that match the function names.
     /// </summary>
     public class Logger
     {
-
-        /// <summary>
-        /// The identifier to include at the start of every line.
-        /// If not set, defaults to this assembly's name.
-        /// </summary>
-        public string LogPrefix { get; set; }
-
         public Logger(string logPrefix = "")
         {
-            if (string.IsNullOrEmpty(logPrefix))
-            {
-                logPrefix = Assembly.GetExecutingAssembly().GetName().Name;
-            }
+            if (string.IsNullOrEmpty(logPrefix)) logPrefix = Assembly.GetExecutingAssembly().GetName().Name;
 
             LogPrefix = logPrefix;
         }
+
+        /// <summary>
+        ///     The identifier to include at the start of every line.
+        ///     If not set, defaults to this assembly's name.
+        /// </summary>
+        public string LogPrefix { get; set; }
 
         public void Log(string message)
         {
