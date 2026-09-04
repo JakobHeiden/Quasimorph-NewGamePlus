@@ -1,0 +1,7 @@
+{
+  "UniqueModName": "Entengummitiger_NewGamePlus",
+  "Assemblies": [
+    "NewGamePlus.dll"
+  ],
+  "Dependencies": []
+}
