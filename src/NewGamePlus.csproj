@@ -40,6 +40,31 @@
 			<HintPath>$(ManagedPath)UnityEngine.InputLegacyModule.dll</HintPath>
 			<Private>False</Private>
 		</Reference>
+		<Reference Include="UnityEngine.UIModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+			<SpecificVersion>False</SpecificVersion>
+			<HintPath>$(ManagedPath)UnityEngine.UIModule.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="UnityEngine.TextRenderingModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+			<SpecificVersion>False</SpecificVersion>
+			<HintPath>$(ManagedPath)UnityEngine.TextRenderingModule.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="UnityEngine.UI, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+			<SpecificVersion>False</SpecificVersion>
+			<HintPath>$(ManagedPath)UnityEngine.UI.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Unity.TextMeshPro, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+			<SpecificVersion>False</SpecificVersion>
+			<HintPath>$(ManagedPath)Unity.TextMeshPro.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="SimpleJSON, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+			<SpecificVersion>False</SpecificVersion>
+			<HintPath>$(ManagedPath)SimpleJSON.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
 	</ItemGroup>
 	<ItemGroup>
 		<PackageReference Include="BepInEx.AssemblyPublicizer.MSBuild" Version="0.4.2" ExcludeAssets="runtime"/>

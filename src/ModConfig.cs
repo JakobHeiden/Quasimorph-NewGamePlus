@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using Newtonsoft.Json;
@@ -18,6 +18,20 @@ namespace NewGamePlus
         };
 
         public Dictionary<string, BackpackConfig> Backpacks { get; set; } = new Dictionary<string, BackpackConfig>();
+
+        /// <summary>Counted in space time, which only advances in space mode.</summary>
+        public double ReturnDelayHours { get; set; } = 72.0;
+
+        public int AvailableShuttles { get; set; } = 3;
+
+        /// <summary>Off by default: post-mission story dialogue consumes triggers, so deferring it can
+        ///     reorder narrative.</summary>
+        public bool DelayStoryMissions { get; set; } = false;
+
+        /// <summary>Offset from the top centre of the space HUD, in canvas units.</summary>
+        public float ShuttleCounterX { get; set; } = 0f;
+
+        public float ShuttleCounterY { get; set; } = -12f;
 
         public static ModConfig LoadConfig(string configPath)
         {
