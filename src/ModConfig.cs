@@ -20,7 +20,7 @@ namespace NewGamePlus
         public Dictionary<string, BackpackConfig> Backpacks { get; set; } = new Dictionary<string, BackpackConfig>();
 
         /// <summary>Counted in space time, which only advances in space mode.</summary>
-        public double ReturnDelayHours { get; set; } = 72.0;
+        public double ReturnDelayHours { get; set; } = 120.0;
 
         public int AvailableShuttles { get; set; } = 3;
 
