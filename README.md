@@ -2,22 +2,26 @@
 
 ![thumbnail icon](media/thumbnail.png)
 
-# Configuration
+A rework of the base game.
 
-The configuration file will be created on the first game run and can be found at `%AppData%\..\LocalLow\Magnum Scriptum Ltd\Quasimorph_ModConfigs\NewGamePlus\config.json`.
+This mod changes the save version. Saves made with it will not load without it, and saves made
+without it will not load with it.
 
-|Name|Default|Description|
-|--|--|--|
-|FooKey|true|Some Description|
+## Missions
 
-## Key List
-The list of valid keyboard keys can be found  at the bottom of https://docs.unity3d.com/ScriptReference/KeyCode.html
-Beware that numbers 0-9 are Alpha0 - Alpha9.  Most of the other keys are as expected such as X for X.
-Use "None" to not bind the key.
+Clones will now take 5 days to return from a mission, instead of 1. However, during this time you can go other missions with your other clones. You are limited to 3 shuttles however.
 
-# Buy Me a Coffee
-If you enjoy my mods and want to buy me a coffee, check out my [Ko-Fi](https://ko-fi.com/nbkredspy71915) page.
-Thanks!
+## Backpacks
+
+No more Buffalo juggling, no more loot stashes. Bring a large backpack to fill with loot, face the dodge penalty:
+- Cannot equip or unequip backbacks during a mission
+- Backpacks cannot be damaged
+- Loot weighs nothing, but the backpack itself is heavy
 
 # Source Code
+
 Source code is available on GitHub at https://github.com/Entengummitiger/NewGamePlus
+
+# Contact me
+
+Find me on Discord: ente4
