@@ -1,7 +1,7 @@
 using HarmonyLib;
 using MGSC;
 
-namespace NewGamePlus
+namespace NewGamePlus.Backpacks
 {
     // Blocks equipping/unequipping the backpack while in a dungeon (ship-only action).
     // "In dungeon" = DungeonGameMode.Instance != null (nulled the instant a raid ends).

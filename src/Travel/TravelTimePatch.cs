@@ -1,7 +1,7 @@
 using HarmonyLib;
 using MGSC;
 
-namespace NewGamePlus
+namespace NewGamePlus.Travel
 {
     /// <summary>
     ///     Scales spaceship travel duration. Travel hours are distance times a single global factor, so scaling that

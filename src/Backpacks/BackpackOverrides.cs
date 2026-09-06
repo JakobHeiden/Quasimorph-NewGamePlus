@@ -1,6 +1,6 @@
 using MGSC;
 
-namespace NewGamePlus
+namespace NewGamePlus.Backpacks
 {
     public static class BackpackOverrides
     {

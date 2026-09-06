@@ -1,6 +1,7 @@
 ﻿using System.IO;
 using HarmonyLib;
 using MGSC;
+using NewGamePlus.Backpacks;
 
 namespace NewGamePlus
 {
