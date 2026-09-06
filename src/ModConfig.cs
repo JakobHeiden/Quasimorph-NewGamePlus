@@ -24,6 +24,9 @@ namespace NewGamePlus
 
         public int AvailableShuttles { get; set; } = 3;
 
+        /// <summary>Multiplies the hours a spaceship flight between space objects costs.</summary>
+        public double TravelTimeMultiplier { get; set; } = 1.0 / 3.0;
+
         /// <summary>Off by default: post-mission story dialogue consumes triggers, so deferring it can
         ///     reorder narrative.</summary>
         public bool DelayStoryMissions { get; set; } = false;

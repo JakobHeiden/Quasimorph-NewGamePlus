@@ -11,6 +11,10 @@ without it will not load with it.
 
 Clones will now take 5 days to return from a mission, instead of 1. However, during this time you can go other missions with your other clones. You are limited to 3 shuttles however.
 
+## Travel
+
+Travel is three times faster.
+
 ## Backpacks
 
 No more Buffalo juggling, no more loot stashes. Bring a large backpack to fill with loot, face the dodge penalty:
