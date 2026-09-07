@@ -22,6 +22,14 @@ No more Buffalo juggling, no more loot stashes. Bring a large backpack to fill w
 - Backpacks cannot be damaged
 - Loot weighs nothing, but the backpack itself is heavy
 
+## Food
+
+Perk activations no longer cost calories.
+Movement calories are now independent of weight, with the following cost per AP: sneak 10, walk 5, run 20.
+Food no longer spawns on corpses (unless the clone has the Marauder perk), and only spawns in containers specific to food drops, like vending machines.
+The food shortage event no longer occurs.
+Moo-Moo and Chick-Chick are now more expensive to craft.
+
 ## Weapon and armor cases
 
 Disassembly has been reworked: both now drop 4 items, of random tech level, capped at current average tech level +2.

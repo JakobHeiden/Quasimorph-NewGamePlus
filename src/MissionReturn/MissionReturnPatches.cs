@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using HarmonyLib;
 using MGSC;
 
@@ -190,8 +190,9 @@ namespace NewGamePlus.MissionReturn
 
     /// <summary>
     ///     Hides clones whose haul is still in transit from a fetch turn-in, which otherwise deletes its
-    ///     count out of every mercenary's inventory with no notion of who earned what. Swapping the
-    ///     argument for a stand-in works because the method only reads Values.
+    ///     count out of every mercenary's inventory, the raiding clone's first. Swapping the argument for
+    ///     a stand-in works because the method builds its sweep set from Values alone: priorityStorages
+    ///     only reorders storages already in that set, so a hidden clone's containers stay out of it.
     /// </summary>
     [HarmonyPatch(typeof(ItemInteractionSystem), nameof(ItemInteractionSystem.RemoveSpecificItem))]
     internal static class ItemInteractionSystem_RemoveSpecificItem_SkipReturning

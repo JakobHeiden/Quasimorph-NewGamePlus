@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using Newtonsoft.Json;
@@ -57,6 +57,16 @@ namespace NewGamePlus
         /// <summary>How much less likely a pick is per tech level below the cap. 1 draws flat across the
         ///     whole pool, which at a high cap is mostly early-game gear.</summary>
         public float CaseTechLevelFalloff { get; set; } = 0.6f;
+
+        /// <summary>Calories spent per action point while sneaking. One action point is one tile, and
+        ///     sneaking grants one per turn.</summary>
+        public float SlowMoveCaloriesPerAction { get; set; } = 10f;
+
+        /// <summary>Calories spent per action point while walking, which grants two per turn.</summary>
+        public float NormalMoveCaloriesPerAction { get; set; } = 5f;
+
+        /// <summary>Calories spent per action point while running, which grants three per turn.</summary>
+        public float RunMoveCaloriesPerAction { get; set; } = 20f;
 
         /// <summary>Offset from the top centre of the space HUD, in canvas units.</summary>
         public float ShuttleCounterX { get; set; } = 0f;

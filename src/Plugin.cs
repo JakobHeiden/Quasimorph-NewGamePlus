@@ -2,6 +2,7 @@
 using HarmonyLib;
 using MGSC;
 using NewGamePlus.Backpacks;
+using NewGamePlus.Recipes;
 using NewGamePlus.WeaponAndArmorCases;
 
 namespace NewGamePlus
@@ -24,6 +25,8 @@ namespace NewGamePlus
             new Harmony("Entengummitiger_" + ConfigDirectories.ModAssemblyName).PatchAll();
 
             BackpackOverrides.Apply(Config, ConfigDirectories.ConfigPath);
+
+            RecipeOverrides.Apply();
 
             LootCases.Initialize();
         }
