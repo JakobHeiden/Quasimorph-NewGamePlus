@@ -31,6 +31,33 @@ namespace NewGamePlus
         ///     reorder narrative.</summary>
         public bool DelayStoryMissions { get; set; } = false;
 
+        /// <summary>Weapons rolled into a Weapons Case each time one is taken apart.</summary>
+        public int WeaponCaseWeapons { get; set; } = 4;
+
+        /// <summary>Scrap-metal melee weapons, which the game's data does not otherwise distinguish from
+        ///     a service knife or a police baton. Repurposed tools are already excluded by their
+        ///     WeaponSubClass and need no entry here.</summary>
+        public List<string> WeaponCaseExcludedIds { get; set; } = new List<string>
+        {
+            "trash_pipe_1",
+            "trash_club_1",
+            "trash_axe_1",
+            "trash_blade_1",
+            "trash_fist_1",
+            "bone_knife"
+        };
+
+        /// <summary>Armour pieces rolled into an Armor Case each time one is taken apart.</summary>
+        public int ArmorCasePieces { get; set; } = 4;
+
+        /// <summary>Added to the average tech level of the unlocked factions to cap what a rolled case
+        ///     can yield. The cap is clamped to the game's maximum tech level.</summary>
+        public int CaseTechLevelBonus { get; set; } = 2;
+
+        /// <summary>How much less likely a pick is per tech level below the cap. 1 draws flat across the
+        ///     whole pool, which at a high cap is mostly early-game gear.</summary>
+        public float CaseTechLevelFalloff { get; set; } = 0.6f;
+
         /// <summary>Offset from the top centre of the space HUD, in canvas units.</summary>
         public float ShuttleCounterX { get; set; } = 0f;
 

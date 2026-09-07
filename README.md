@@ -17,10 +17,14 @@ Travel is three times faster.
 
 ## Backpacks
 
-No more Buffalo juggling, no more loot stashes. Bring a large backpack to fill with loot, face the dodge penalty:
+No more Buffalo juggling, no more loot stashes. Bring a large backpack to fill with loot? Face the dodge penalty:
 - Cannot equip or unequip backbacks during a mission
 - Backpacks cannot be damaged
 - Loot weighs nothing, but the backpack itself is heavy
+
+## Weapon and armor cases
+
+Disassembly has been reworked: both now drop 4 items, of random tech level, capped at current average tech level +2.
 
 # Source Code
 
