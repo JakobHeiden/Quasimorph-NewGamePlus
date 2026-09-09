@@ -35,6 +35,10 @@ Moo-Moo and Chick-Chick are now more expensive to craft.
 Class perks are now initially limited to Master rank (level 3).
 The class upgrades on the Magnum now facilitate enabling Legend rank (level 4), instead of replacing perks.
 
+## Repair kits
+
+Repair kits no longer restore maximum durability.
+
 ## Weapon and armor cases
 
 Disassembly has been reworked: both now drop 4 items, of random tech level, capped at current average tech level +2.

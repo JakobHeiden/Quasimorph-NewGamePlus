@@ -3,6 +3,7 @@ using HarmonyLib;
 using MGSC;
 using NewGamePlus.Backpacks;
 using NewGamePlus.Recipes;
+using NewGamePlus.RepairKits;
 using NewGamePlus.WeaponAndArmorCases;
 
 namespace NewGamePlus
@@ -27,6 +28,8 @@ namespace NewGamePlus
             BackpackOverrides.Apply(Config, ConfigDirectories.ConfigPath);
 
             RecipeOverrides.Apply();
+
+            RepairKitOverrides.Apply();
 
             LootCases.Initialize();
         }
