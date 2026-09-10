@@ -38,6 +38,7 @@ The class upgrades on the Magnum now facilitate enabling Legend rank (level 4), 
 ## Repair kits
 
 Repair kits no longer restore maximum durability.
+Crafting repair kits now requires an empty box. Empty boxes spawn on disassembling repair kits. Disassembling a repair kit with less than full charges yields a chance for an empty box that scales with the remaining charges.
 
 ## Weapon and armor cases
 

@@ -65,6 +65,15 @@
 			<HintPath>$(ManagedPath)SimpleJSON.dll</HintPath>
 			<Private>False</Private>
 		</Reference>
+		<Reference Include="UnityEngine.ImageConversionModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+			<SpecificVersion>False</SpecificVersion>
+			<HintPath>$(ManagedPath)UnityEngine.ImageConversionModule.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+	</ItemGroup>
+	<ItemGroup>
+		<!-- Item sprites ship inside the DLL, named by bare file name; see EmbeddedSprites.cs -->
+		<EmbeddedResource Include="../assets/**/*.png" LogicalName="%(Filename)%(Extension)"/>
 	</ItemGroup>
 	<ItemGroup>
 		<PackageReference Include="BepInEx.AssemblyPublicizer.MSBuild" Version="0.4.2" ExcludeAssets="runtime"/>

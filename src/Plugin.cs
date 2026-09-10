@@ -29,9 +29,17 @@ namespace NewGamePlus
 
             RecipeOverrides.Apply();
 
-            RepairKitOverrides.Apply();
+            var repairKits = RepairKitRecords.FindAll();
+
+            RepairKitOverrides.Apply(repairKits);
 
             LootCases.Initialize();
+
+            if (EmptyBox.Register())
+            {
+                RepairKitRecipes.RequireEmptyBox(repairKits);
+                EmptyBoxSalvage.Initialize(repairKits);
+            }
         }
     }
 }
