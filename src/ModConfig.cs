@@ -68,6 +68,14 @@ namespace NewGamePlus
         /// <summary>Calories spent per action point while running, which grants three per turn.</summary>
         public float RunMoveCaloriesPerAction { get; set; } = 20f;
 
+        /// <summary>Clones a new game starts with on top of the difficulty's count, never past the game's
+        ///     own ceiling of one per starting mercenary.</summary>
+        public int ExtraStartingClones { get; set; } = 2;
+
+        /// <summary>Class chips a new game starts with on top of the difficulty's count, each for a
+        ///     different class, never past the game's own ceiling of one per starting class.</summary>
+        public int ExtraStartingClassChips { get; set; } = 2;
+
         /// <summary>Offset from the top centre of the space HUD, in canvas units.</summary>
         public float ShuttleCounterX { get; set; } = 0f;
 

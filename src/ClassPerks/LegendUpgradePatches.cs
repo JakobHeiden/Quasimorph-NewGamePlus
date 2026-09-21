@@ -11,19 +11,29 @@ namespace NewGamePlus.ClassPerks
     // The pricing falls out for free: MagnumProjectPerkParameterPanel.ModificationsCount scores a slot
     // against the *base* class record, so basic -> legend is not in it and already counts as one paid
     // step, and legend -> basic already counts as a refund.
+    //
+    // With Vanilla Perk Swaps on, every patch here steps aside and the project swaps perks as in the
+    // base game.
 
     /// <summary>
     ///     Keeps the legend id out of MercenaryClassRecord.PerkIds. The value still lands in the
     ///     project's AppliedModifications, which is what LegendUnlock reads, but the class record stays
     ///     all basic ids so that nothing which builds perks from it - ApplyClassForMercenary,
     ///     RestoreSpecificPerks, the class preview on SelectClassScreen - can hand out a legend perk.
+    ///     With Vanilla Perk Swaps on, swapped perks are written through as in the base game, but a legend
+    ///     id is still held back: only the rework ever stores one, and written through it would become the
+    ///     class's starting perk. That happens to a campaign started before the option existed, whose
+    ///     tutorial setting now reads as the option.
     /// </summary>
     [HarmonyPatch(typeof(MagnumProject), "ApplyValueToRecord")]
     internal static class MagnumProject_ApplyValueToRecord_KeepPerkSlotsBasic
     {
-        private static bool Prefix(MagnumProjectParameter projectParameter)
+        private static bool Prefix(MagnumProjectParameter projectParameter, string value)
         {
-            return !LegendUnlock.IsPerkParameter(projectParameter.ParameterType);
+            if (!LegendUnlock.IsPerkParameter(projectParameter.ParameterType))
+                return true;
+
+            return VanillaPerkSwaps.IsOn && !PerkGrade.IsLegend(value);
         }
     }
 
@@ -40,7 +50,7 @@ namespace NewGamePlus.ClassPerks
             MagnumProjectParameter projectParameter,
             ref object __result)
         {
-            if (!LegendUnlock.IsPerkParameter(projectParameter.ParameterType))
+            if (VanillaPerkSwaps.IsOn || !LegendUnlock.IsPerkParameter(projectParameter.ParameterType))
                 return;
 
             string applied;
@@ -62,6 +72,9 @@ namespace NewGamePlus.ClassPerks
     {
         private static bool Prefix(MagnumProjectPerkParameterPanel __instance)
         {
+            if (VanillaPerkSwaps.IsOn)
+                return true;
+
             var target = ToggleTarget(__instance);
             if (target != null)
                 __instance.AbilitySelected(target);
@@ -89,6 +102,9 @@ namespace NewGamePlus.ClassPerks
     {
         private static bool Prefix(MagnumProjectPerkParameterPanel __instance)
         {
+            if (VanillaPerkSwaps.IsOn)
+                return true;
+
             __instance.AbilitySelected(__instance.OriginalAbility);
             return false;
         }
@@ -104,7 +120,7 @@ namespace NewGamePlus.ClassPerks
     {
         private static bool Prefix(MagnumProjectParameter parameter)
         {
-            return !LegendUnlock.IsPerkParameter(parameter.ParameterType);
+            return VanillaPerkSwaps.IsOn || !LegendUnlock.IsPerkParameter(parameter.ParameterType);
         }
     }
 }

@@ -39,6 +39,7 @@ On normal and hard, class perk mechanics are unchanged.
 
 Classes are exclusive, ie no two clones can have the same class.
 Assigning a class consumes a class chip. Classes no longer need unlocking. Reassigning a clone a new class yields the class chip of the previous class.
+A new game starts with 2 more clones and 2 more class chips than the difficulty grants, up to the game's limit of 6 clones and 4 class chips (so 4 of each on Unfair). The starting class chips are all for different classes.
 
 ## Repair kits
 

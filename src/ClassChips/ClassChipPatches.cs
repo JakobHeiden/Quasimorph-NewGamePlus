@@ -1,3 +1,4 @@
+using System.Linq;
 using HarmonyLib;
 using MGSC;
 
@@ -41,8 +42,9 @@ namespace NewGamePlus.ClassChips
 
     /// <summary>
     ///     Hands out a new game's starting classes as one chip each. The difficulty's class count and its
-    ///     random-classes option still pick which classes those are. MagnumCargo is not among the parameters
-    ///     but is already in place: GenerateStartingItems runs right before.
+    ///     random-classes option still pick which classes those are, and no class
+    ///     is handed out twice. MagnumCargo is not among the parameters but is already in place:
+    ///     GenerateStartingItems runs right before.
     /// </summary>
     [HarmonyPatch(typeof(MercenarySystem), nameof(MercenarySystem.FillStartMercsAndClasses))]
     internal static class MercenarySystem_FillStartMercsAndClasses_StartingChips
@@ -50,7 +52,7 @@ namespace NewGamePlus.ClassChips
         private static void Postfix(SpaceTime spaceTime, Mercenaries mercenaries)
         {
             var magnumCargo = GameState.Get<MagnumCargo>();
-            foreach (var classId in mercenaries.UnlockedClasses)
+            foreach (var classId in mercenaries.UnlockedClasses.Distinct())
                 ClassChipStock.Give(magnumCargo, spaceTime, classId);
         }
     }
