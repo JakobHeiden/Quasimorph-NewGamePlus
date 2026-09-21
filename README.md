@@ -9,7 +9,7 @@ without it will not load with it.
 
 ## Missions
 
-Clones will now take 5 days to return from a mission, instead of 1. However, during this time you can go other missions with your other clones. You are limited to 3 shuttles however.
+Clones will now take 5 days to return from a mission, instead of 1. However, during this time you can go other missions with your other clones. You are limited to 3 shuttles.
 
 ## Travel
 
@@ -17,7 +17,6 @@ Travel is three times faster.
 
 ## Backpacks
 
-No more Buffalo juggling, no more loot stashes. Bring a large backpack to fill with loot? Face the dodge penalty:
 - Cannot equip or unequip backbacks during a mission
 - Backpacks cannot be damaged
 - Loot weighs nothing, but the backpack itself is heavy
@@ -36,6 +35,12 @@ The tutorial difficulty option has been replaced by "Vanilla Perk Swaps", and th
 
 Class perks are now initially limited to Master rank (level 3).
 The class upgrades on the Magnum now facilitate enabling Legend rank (level 4), instead of replacing perks.
+
+## Class chips
+
+Classes are exclusive, ie no two clones can have the same class.
+Assigning a class consumes a class chip. Classes no longer need unlocking. Reassigning a clone a new class yields the class chip of the previous class.
+A new game starts with 2 more clones and 2 more class chips than the difficulty grants, up to the game's limit of 6 clones and 4 class chips (so 4 of each on Hard). The starting class chips are all for different classes.
 
 ## Repair kits
 
