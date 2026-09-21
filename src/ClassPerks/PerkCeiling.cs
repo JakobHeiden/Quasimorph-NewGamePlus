@@ -14,6 +14,8 @@ namespace NewGamePlus.ClassPerks
     ///     and its while loop never drains.
     ///     Perk.NextPerkId is [Save]d, so the cap survives a save/load and travels with the instances a
     ///     clone inherits; the syncs exist to catch the moments the value should change.
+    ///     With Vanilla Perk Swaps on nothing is capped, so a sync also releases the caps a campaign
+    ///     started before the option existed still carries.
     /// </summary>
     internal static class PerkCeiling
     {
@@ -44,7 +46,7 @@ namespace NewGamePlus.ClassPerks
                 if (record == null)
                     continue;
 
-                perk.NextPerkId = LegendUnlock.IsUnlocked(mercenary.MercClassId, tag)
+                perk.NextPerkId = VanillaPerkSwaps.IsOn || LegendUnlock.IsUnlocked(mercenary.MercClassId, tag)
                     ? record.NextPerkId
                     : string.Empty;
             }

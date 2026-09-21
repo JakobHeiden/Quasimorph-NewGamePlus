@@ -32,6 +32,8 @@ Moo-Moo and Chick-Chick are now more expensive to craft.
 
 ## Class perks
 
+The tutorial difficulty option has been replaced by "Vanilla Perk Swaps", and the tutorial is always skipped. The option is on for Easy and Normal, off for Hard, and fixed once a campaign has started. With it on, class perks and the class upgrades on the Magnum work as in the base game. With it off:
+
 Class perks are now initially limited to Master rank (level 3).
 The class upgrades on the Magnum now facilitate enabling Legend rank (level 4), instead of replacing perks.
 

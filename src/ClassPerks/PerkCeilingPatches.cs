@@ -64,12 +64,16 @@ namespace NewGamePlus.ClassPerks
     ///     selecting a capped perk: the mercenary would train forever for nothing, and the completion
     ///     notification would look up a record for an empty id. Rerun the original selection with the
     ///     cap honoured, which also lets it fall through to a perk whose slot has been unlocked.
+    ///     With Vanilla Perk Swaps on there is no cap to honour, and the original runs.
     /// </summary>
     [HarmonyPatch(typeof(MercenarySystem), nameof(MercenarySystem.GetPerkForTraining))]
     internal static class MercenarySystem_GetPerkForTraining_SkipCapped
     {
         private static bool Prefix(MagnumProgression magnumSpaceship, Mercenary mercenary, ref Perk __result)
         {
+            if (VanillaPerkSwaps.IsOn)
+                return true;
+
             var levelLimit = Mathf.Min(magnumSpaceship.TrainingCenterPerkLevelLimit, 4f);
             Perk trainable = null;
             var lowestLevel = int.MaxValue;

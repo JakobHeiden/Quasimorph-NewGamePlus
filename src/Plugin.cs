@@ -2,6 +2,7 @@
 using HarmonyLib;
 using MGSC;
 using NewGamePlus.Backpacks;
+using NewGamePlus.ClassPerks;
 using NewGamePlus.Recipes;
 using NewGamePlus.RepairKits;
 using NewGamePlus.WeaponAndArmorCases;
@@ -34,6 +35,8 @@ namespace NewGamePlus
             RepairKitOverrides.Apply(repairKits);
 
             LootCases.Initialize();
+
+            VanillaPerkSwaps.Register();
 
             if (EmptyBox.Register())
             {
