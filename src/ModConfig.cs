@@ -7,7 +7,7 @@ namespace NewGamePlus
 {
     public class BackpackConfig
     {
-        public float Weight = 15f;
+        public float Weight;
     }
 
     public class ModConfig
