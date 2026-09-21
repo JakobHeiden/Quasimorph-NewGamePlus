@@ -31,8 +31,9 @@ Moo-Moo and Chick-Chick are now more expensive to craft.
 
 ## Class perks
 
-Class perks are now initially limited to Master rank (level 3).
+On Unfair difficulty, class perks are now initially limited to Master rank (level 3).
 The class upgrades on the Magnum now facilitate enabling Legend rank (level 4), instead of replacing perks.
+On normal and hard, class perk mechanics are unchanged.
 
 ## Class chips
 
