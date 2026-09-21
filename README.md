@@ -42,6 +42,10 @@ Classes are exclusive, ie no two clones can have the same class.
 Assigning a class consumes a class chip. Classes no longer need unlocking. Reassigning a clone a new class yields the class chip of the previous class.
 A new game starts with 2 more clones and 2 more class chips than the difficulty grants, up to the game's limit of 6 clones and 4 class chips (so 4 of each on Hard). The starting class chips are all for different classes.
 
+## Starting items
+
+A new game starts with two extra Hydra-12 pistols and a stack of 9mm bullets in the cargo.
+
 ## Repair kits
 
 Repair kits no longer restore maximum durability.
